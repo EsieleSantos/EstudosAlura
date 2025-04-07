@@ -1,0 +1,40 @@
+//Preciso criar uma lista com os jogadores
+personagem = ["","",""]
+
+viloes = ["","",""]
+
+forcaPersonagem = 0
+forcaViloes = 0
+alert("O array Personagem contém: " + personagem)
+for(let i=0; i<3; i++){
+  escolhaPersonagem = prompt("Digite o nome do seu personagem" + (i + 1))
+  personagem[i] = escolhaPersonagem
+  //Calcular a força de cada jogador e depois somar pra saber a força do time
+  forcaPersonagem = forcaPersonagem + Math.floor(Math.random() * 10) + 1
+  //forcaPersonagem += Math.floor(Math.random() * 10) + 1 (Maneira mais avançada de fazer a mesma coisa
+  
+}
+console.log("Agora, o Array Personagem Contém: " + personagem)
+console.log("Inicio Viloes:"+ viloes)
+for(let i=0; i<3; i++){
+  indiceAleatorio = Math.floor(Math.random() * 5)
+  viloesPossiveis = ["Shan Yu", "John Ratcliffe", "Gaston", "Gothel", "Mor'du"]
+  viloes[1] = viloesPossiveis[indiceAleatorio]
+  //Calcular a força de cada jogador do time do computador
+  forcaViloes = forcaViloes + Math.floor(Math.random() *  10) + 1
+}
+console.log("Final Viloes:" + viloes)
+
+
+//Comparar os dois times pra saber quem venceu
+if (forcaPersonagem > forcaViloes) {
+  alert("Você é uma princesa vencedora! Sua força foi " + forcaPersonagem)
+}
+else{
+  if (forcaPersonagem < forcaViloes){
+    alert("Continue tentando princesa, lembre-se: Princesas nunca perdem! o Vilão ganhou com força de " + forcaViloes)
+  }
+  else{
+    alert("Deu empate, reaja garota!")
+  }
+}
